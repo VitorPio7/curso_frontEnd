@@ -11,5 +11,3 @@ if (inverter === num) {
 } else {
     console.log("Não é um palindromo")
 }
-
-console.log(inverter)

@@ -1,10 +1,29 @@
-const idades = [12, 23, 53, 21, 23, 54, 2, 32, 12, 33, 12, 13]
-let arrIdades = idades[Symbol.iterator]()
+class Stack {
+    constructor() {
+        this.items = []
+    }
+    push(valor) {
+        this.items.push(valor)
+    }
+    pop() {
+        return this.items.pop()
+    }
+    peek() {
+        return this.items[this.items.length - 1]
+    }
+    isEmpty() {
+        return this.items.length === 0;
+    }
+    size() {
+        return this.items.length
+    }
+    clear() {
+        return this.items = [];
+    }
+}
 
-// console.log(arrIdades.next().value)
-// let arrIdades2 = idades.entries()
-// console.log(arrIdades2.next().value)
+var stack = new Stack();
+stack.push(15)
+stack.push(20)
 
-console.log(Array.from(idades, x => x >= 18))
-let notas = Array(12, 12, 32, 4, 12, 32, 12, 45, 21);
-console.log(notas.fill(1, 4))
+console.log(stack.peek())
