@@ -33,16 +33,19 @@ function Queue() {
 function hotPotato(nameList, num) {
     var queue = new Queue()
 
-    for (var i = 0; i < nameList.length; i++) {
+    for (var i = 0; i < nameList.length; i++) {/*vai adicionar os elementos do array através do enqueue */
         queue.enqueue(nameList[i])
     }
     var eliminated = '';
 
     while (queue.size() > 1) {
         for (var i = 0; i < num; i++) {
-            queue.enqueue(queue.dequeue())
+            queue.enqueue(queue.dequeue())/**vai adicionar no final o elemento do começo */
         }
         eliminated = queue.dequeue()
         console.log(eliminated + ' was eliminated from the Hot Potato game')
     }
 }
+var names = ['João', 'José', 'Maria', 'Ana', 'Lucas']
+var winner = hotPotato(names, 7);//sao sete rodadas com esses nomes;
+console.log('The winner is: ' + winner)

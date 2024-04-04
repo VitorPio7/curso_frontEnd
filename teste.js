@@ -1,29 +1,23 @@
-class Stack {
-    constructor() {
-        this.items = []
+function charCount(str) {
+    var obj = {};
+    for (var char of str) {
+        if (isAlphaNumeric(char)) {
+            char = char.toLowerCase();
+            obj[char] == ++obj[char] || 1;
+        }
     }
-    push(valor) {
-        this.items.push(valor)
-    }
-    pop() {
-        return this.items.pop()
-    }
-    peek() {
-        return this.items[this.items.length - 1]
-    }
-    isEmpty() {
-        return this.items.length === 0;
-    }
-    size() {
-        return this.items.length
-    }
-    clear() {
-        return this.items = [];
-    }
+    return obj
 }
 
-var stack = new Stack();
-stack.push(15)
-stack.push(20)
 
-console.log(stack.peek())
+function isAlphaNumeric(char) {
+    var code = char.charCodeAt(0);
+    if (!(code > 47 && code < 58) &&
+        !(code > 64 && code < 91) &&
+        !(code > 96 && code < 123)) {
+        return false;
+    }
+    return true;
+}
+
+console.log(charCount("Hello"))
