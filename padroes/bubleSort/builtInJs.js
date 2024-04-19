@@ -1,0 +1,6 @@
+function numberCompare(num1, num2) {
+    return num1 - num2 /*ordenar em ordem crescente */
+}
+
+console.log([6, 4, 15, 10].sort(numberCompare))
+
