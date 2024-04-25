@@ -9,8 +9,8 @@ function maxSubarraySum(arr, sub) {
     }
     tempSum = maxSum;
     for (let i = sub; i < arr.length; i++) {
-        tempSum = tempSum - arr[i - sub] + arr[i];
-        maxSum = Math.max(maxSum, tempSum);
+        tempSum = tempSum - arr[i - sub] + arr[i];/*300 - arr[2-2]+arr[2] = 300 - arr[0]+arr[2] = 300-100+300=500 */
+        maxSum = Math.max(maxSum, tempSum);/*(500,300)=500 */
     }
     return maxSum
 
